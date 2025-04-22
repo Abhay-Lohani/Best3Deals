@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "743314897432",
+    "project_id": "best3deals-1741f",
+    "storage_bucket": "best3deals-1741f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743314897432:android:fa8e030c8e171b91b6216d",
+        "android_client_info": {
+          "package_name": "com.best3deals.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqKmOB5-cUUKzOJqCVPRxLYfF1sx6FNvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

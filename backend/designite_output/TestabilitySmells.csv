@@ -1,0 +1,4 @@
+Project Name,Package Name,Type Name,Testability Smell,Cause of the Smell
+best3deals,com.group5.best3deals.controller,AuthenticationController,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 9
+best3deals,com.group5.best3deals.post.controller,PostController,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 8
+best3deals,com.group5.best3deals.service,AuthenticationService,Excessive Dependency,The tool detected the smell in this class because the class depends on too many dependencies. The total number of dependencies is: 8

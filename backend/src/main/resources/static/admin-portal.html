@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Correct path -->
+    <script src="/scripts.js"></script> <!-- Correct path -->
+</head>
+<body>
+<header>
+    <h1>Admin Portal</h1>
+</header>
+<nav>
+    <a href="#" onclick="loadDashboard()">Dashboard</a>
+    <a href="#" onclick="loadUserList()">User List</a>
+    <a href="#" onclick="loadFlyers()">Flyer List</a>
+    <a href="#" onclick="loadProducts()">Product List</a>
+    <a href="#" onclick="loadStores()">Store List</a>
+    <a href="#" onclick="loadPosts()">Post List</a>
+    <a href="#" onclick="logout()">Logout</a>
+</nav>
+<div id="content">
+    <div id="loginForm">
+        <h2>Login</h2>
+        <form onsubmit="login(event)">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div id="dashboard">
+        <h2>Welcome to Admin Portal of Best3Deals</h2>
+        <p>Manage users, flyers, products, and stores from here.</p>
+    </div>
+    <div id="createUserForm" style="display: none;">
+        <h2>Create New User</h2>
+        <form onsubmit="createUser(event)">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <br>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <br>
+            <label for="email_newuser">Email:</label>
+            <input type="email" id="email_newuser" name="email_newuser" autocomplete="new-email" required>
+            <br>
+            <label for="password_newuser">Password:</label>
+            <input type="password" id="password_newuser" name="password_newuser" autocomplete="new-password" required>
+            <br>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required>
+            <br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+            <br>
+            <label for="userType">User Type:</label>
+            <select id="userType" name="userType" required>
+                <option value="CUSTOMER">Customer</option>
+                <option value="SELLER">Seller</option>
+                <option value="ADMIN">Admin</option>
+                <option value="USER">User</option>
+            </select>
+            <br>
+            <button type="submit">Create User</button>
+            <button type="button" onclick="hideCreateUserForm()">Cancel</button>
+        </form>
+    </div>
+    <div id="userList">
+        <h2>User List</h2>
+        <button onclick="showCreateUserForm()">Create User</button>
+        <table id="usersTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Enabled</th>
+                <th>User Type</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- User rows dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="flyerList">
+        <h2>Flyer List</h2>
+        <table id="flyersTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Store ID</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Flyer rows dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    <div id="productList">
+        <h2>Product List</h2>
+        <table id="productsTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Quantity in Stock</th>
+                <th>Category ID</th>
+                <th>Store ID</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Product rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    <div id="storeList">
+        <h2>Store List</h2>
+        <table id="storesTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Location (Lat, Long)</th>
+                <th>Brand ID</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Store rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    <div id="postList" style="display: none;">
+        <h2>Post List</h2>
+        <table id="postsTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>User ID</th>
+                <th>Store ID</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Post rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="commentList" style="display: none;">
+        <h2>Comment List</h2>
+        <table id="commentsTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Content</th>
+                <th>User ID</th>
+                <th>Post ID</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Comment rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
